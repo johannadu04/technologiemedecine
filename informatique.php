@@ -9,4 +9,6 @@ $subTitlePage = 'Cette catégorie concerne...';
 $picturePage = 'img/home-bg.jpg';
 $view = 'cat/informatique';
 
+// Controlleur de la page informatique du menu catégories.
+
 require('tpl/layout.phtml');

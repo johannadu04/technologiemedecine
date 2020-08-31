@@ -19,18 +19,16 @@ $lastnameUser = '';
 //$bioUser = '';
 $valideUser = true;
 $roleUser = 'ROLE_AUTHOR';
- 
-try
-{
+
+try {
     // Je reçois le form
-    if(array_key_exists('email',$_POST))
-    {
+    if (array_key_exists('email', $_POST)) {
         $emailUser = trim($_POST['email']);
         $firstnameUser = trim($_POST['firstname']);
         $lastnameUser = trim($_POST['lastname']);
         $passwordUser = $_POST['password']; //pas de trim ici !
         //$bioUser = trim($_POST['bio']);
-        $valideUser = ($_POST['valide'])?true:false;
+        $valideUser = ($_POST['valide']) ? true : false;
         $roleUser = $_POST['role'];
 
         $dbh = connect();
@@ -42,11 +40,11 @@ try
             $errorForm[] = 'Le mot de passe doit comporter 8 caractères minimum !';
 
 
-        if(trim($emailUser) == '' || filter_var($emailUser, FILTER_VALIDATE_EMAIL) === false){
+        if (trim($emailUser) == '' || filter_var($emailUser, FILTER_VALIDATE_EMAIL) === false) {
             $errors[] =  'Erreur email';
         } else {
             $sth = $dbh->prepare('SELECT use_email FROM b_user WHERE use_email = :email');
-            $sth->bindValue('email',$emailUser);
+            $sth->bindValue('email', $emailUser);
             $sth->execute();
             $user = $sth->fetch();
 
@@ -54,20 +52,20 @@ try
                 $errors[] =  'Cet email est déjà utilisé dans la base';
         }
 
-        if(trim($firstnameUser) == '')
+        if (trim($firstnameUser) == '')
             $errors[] =  'Erreur firstname ne peut être vide !';
 
         if (trim($lastnameUser) == '')
             $errors[] =  'Erreur lastname ne peut être vide !';
 
-        if (count($errors)==0) {
+        if (count($errors) == 0) {
 
-            $passwordUser = password_hash($passwordUser,PASSWORD_BCRYPT);
+            $passwordUser = password_hash($passwordUser, PASSWORD_BCRYPT);
 
-           
-            $sth = $dbh->prepare('INSERT INTO b_user (use_id, use_firstname, use_lastname, use_email, use_password, use_valide, use_role) VALUES (NULL, :firstname, :lastname, :email, :password, :valide, :role)');
 
-            $sth->bindValue('firstname',$firstnameUser);
+            $sth = $dbh->prepare('INSERT INTO b_user (use_id, use_firstname, use_lastname, use_email, use_password, use_valid, use_role) VALUES (NULL, :firstname, :lastname, :email, :password, :valide, :role)');
+
+            $sth->bindValue('firstname', $firstnameUser);
             $sth->bindValue('lastname', $lastnameUser);
             $sth->bindValue('email', $emailUser);
             $sth->bindValue('password', $passwordUser);
@@ -80,11 +78,8 @@ try
             exit();
         }
     }
-
-}
-catch (PDOException $e)
-{
-    echo 'Erreur PDO : '.$e->getMessage();
+} catch (PDOException $e) {
+    echo 'Erreur PDO : ' . $e->getMessage();
 
     //var_dump($e->getTrace());
 }
