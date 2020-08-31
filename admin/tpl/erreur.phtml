@@ -1,0 +1,9 @@
+<?php if ($messageErreur != '') : ?>
+    <div class="alert alert-danger" role="alert">
+        <p class="erreur"><?= $messageErreur; ?></p>
+    </div>
+<?php else : ?>
+    <div class="alert alert-danger" role="alert">
+        <p class="erreur">Une erreur inconnue s'est produite</p>
+    </div>
+<?php endif ?>

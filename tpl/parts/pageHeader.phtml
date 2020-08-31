@@ -1,0 +1,15 @@
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('<?= $picturePage ?>')">
+      <div class="overlay"></div>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-md-10 mx-auto">
+                  <div class="site-heading">
+                      <?php if (isset($titlePage) && $titlePage != '') : ?><h1><?= $titlePage ?></h1><?php endif ?>
+                      <?php if (isset($subTitlePage) && $subTitlePage != '') : ?><span class="subheading"><?= $subTitlePage ?></span><?php endif ?>
+                      <?php if (isset($metaPage) && $metaPage != '') : ?><span class="meta"><?= $metaPage ?></span><?php endif ?>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </header>

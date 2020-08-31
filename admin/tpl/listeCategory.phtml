@@ -1,0 +1,12 @@
+<section>
+    <p class="text-right"><a href="addCategory.php" class="btn btn-primary"><i class="icon-plus-square"></i> Ajouter une categorie</a></p>
+
+    <?php foreach ($orderedCategories as $category) : ?>
+        <p><?php for ($i = 0; $i <= $category['level']; $i++) : ?>--<?php endfor; ?> <?= $category['cat_title'] ?><a href="editCategory.php?id=<?= $category['cat_id'] ?>"><i class="icon-edit"></i></a>
+            <a href="delCategory.php" data-toggle="modal" data-target="#delete" data-id="<?= $category['cat_id'] ?>"><i class="icon-trash"></i></a>
+            <span class="badge badge-pill <?=($category['articles'] > 0)? 'badge-success': 'badge-light'?>"><?= $category['articles'] ?> article(s)</span></p>
+    <?php endforeach; ?>
+
+    <?php //displayListeCategorie($orderedCategories); ?>
+
+</section>

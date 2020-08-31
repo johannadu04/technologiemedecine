@@ -1,0 +1,16 @@
+  <!-- Main Content -->
+  <div class="container">
+
+    <?php
+        /** On inclu la part de l'affichage d'un article ! */
+        include('parts/articles.phtml')
+    ?>
+
+      <!-- Pager -->
+      <div class="clearfix">
+            <?php if ($startArticle >= MAX_ARTICLES_BY_PAGE) : ?><a class="btn btn-primary float-left" href="index.php?start=<?= $startArticle - MAX_ARTICLES_BY_PAGE ?>">
+                  < Articles plus récents</a><?php endif ?>
+            <?php if (count($articles) == MAX_ARTICLES_BY_PAGE) : ?><a class="btn btn-primary float-right" href="index.php?start=<?= $startArticle + MAX_ARTICLES_BY_PAGE ?>">Articles plus anciens &rarr;
+              </a><?php endif ?>
+      </div>
+  </div>

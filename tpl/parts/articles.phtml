@@ -1,0 +1,16 @@
+ <?php foreach ($articles as $article) : ?>
+     <article class="row">
+         <div class="col-3"><img class="img-fluid" src="<?= UPLOADS_URL . 'articles/' . $article['art_picture'] ?>" title="<?= $article['art_title'] ?>" alt="<?= $article['art_title'] ?>"></div>
+         <div class="col-9">
+             <a href="post.php?id=<?= $article['art_id'] ?>">
+                 <h2 class="post-title">
+                     <?= $article['art_title'] ?>
+                 </h2>
+             </a>
+             <p><?= $article['art_content'] ?></p>
+             <p class="post-meta">Posté par <a href="author.php?id=<?= $article['art_author'] ?>"><?= $article['use_firstname'] ?> <?= $article['use_lastname'] ?></a>
+                 le <?= $article['art_date_published'] ?> - Dans <a href="frontController.php?controller=category&id=<?= $article['art_categorie'] ?>"><?= $article['cat_title'] ?></a></p>
+         </div>
+     </article>
+     <hr>
+ <?php endforeach ?>

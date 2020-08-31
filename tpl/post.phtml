@@ -1,0 +1,44 @@
+<!-- Main Content -->
+<div class="container">
+    <article>
+        <?= $article['art_content'] ?>
+    </article>
+
+    <a name="comment"></a>
+    <h2>Laisser un commentaire</h2>
+    <?php if (isset($flashbag) && $flashbag != false) : ?>
+        <?php foreach ($flashbag as $message) : ?>
+            <div class="alert alert-dismissible alert-<?= $message['level'] ?>" role="alert">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <p><?= $message['message'] ?></p>
+            </div>
+        <?php endforeach; ?>
+    <?php endif; ?>
+    <form name="sentMessage" id="commentForm" action="addComment.php" novalidate="" method="POST">
+        <input type="hidden" name="idArticle" value="<?= $article['art_id'] ?>">
+        <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+                <label>Nom</label>
+                <input type="text" class="form-control" placeholder="Nom" id="name" name="name" required="" data-validation-required-message="Merci de saisir votre nom" aria-invalid="false" value="<?= $nameComment; ?>">
+                <p class="help-block text-danger"></p>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+                <label>Email</label>
+                <input type="email" class="form-control" placeholder="Email" id="email" name="email" required="" data-validation-required-message="Merci de saisir votre email" aria-invalid="false" value="<?= $emailComment; ?>">
+                <p class="help-block text-danger"></p>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+                <label>Message</label>
+                <textarea rows="5" class="form-control" placeholder="Message" id="message" name="message" required="" data-validation-required-message="Merci de saisir votre message" aria-invalid="false"><?= $contentComment; ?></textarea>
+                <p class="help-block text-danger"></p>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" id="sendMessageButton">Commenter</button>
+        </div>
+    </form>
+</div>

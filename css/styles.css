@@ -1,0 +1,524 @@
+html,
+body {
+  font-family: 'MS Sans Serif', Geneva, sans-serif;
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  color: #FFF;
+  margin: 0;
+  padding: 0;
+  font-family: "DejaVu Sans Mono", monospace;
+
+
+}
+
+/*DEBUT MEDIAQUERIES FENETRES LARGES ORDINATEUR DE BUREAUX ****************DEBUT ORDINATEUR BUREAUX*********************DEBUT ORDINATEUR BUREAUX*****/
+
+/*cibler le logo*/
+@media all and (min-width: 1600px) and (max-width: 2000px) {
+  .logo {
+    position: fixed;
+    left: 100%;
+    z-index: 100;
+    /* le z-order détermine l'ordre des différentes couches que formeront les élément*/
+    padding-top: 20px;
+  }
+
+
+
+
+
+  /*CIBLER LE MENU EN HAUT A GAUCHE*/
+  .navigation {
+    position: fixed;
+    z-index: 1;
+    top: 20px;
+  }
+
+  .navigation li {
+    color: #fff;
+    display: block;
+    padding: 0 10px;
+    line-height: 30px;
+    margin-bottom: 2px;
+    font-weight: bold;
+    -webkit-transition: all .2s ease-in-out;
+    border-bottom: 1px solid black;
+    text-align: left;
+    width: 53px;
+  }
+
+  .navigation li:hover,
+  .active {
+    font-size: 25px;
+    cursor: pointer;
+    width: 100px !important;
+  }
+
+  /*cibler navigation-autres-pages*/
+  #navigation-autres-pages {
+    position: fixed;
+    z-index: 1;
+    top: 20px;
+  }
+
+  #navigation-autres-pages li {
+    color: #fff;
+    display: block;
+    padding: 0 10px;
+    line-height: 30px;
+    margin-bottom: 2px;
+    font-weight: bold;
+    -webkit-transition: all .2s ease-in-out;
+    border-bottom: 1px solid black;
+    text-align: left;
+    width: 53px;
+
+  }
+
+  #navigation-autres-pages li a.active {
+    font-size: 25px;
+    cursor: pointer;
+    width: 100px !important;
+
+  }
+
+  #navigation-autres-pages li a:hover {
+    font-size: 25px;
+    cursor: pointer;
+    width: 100px !important;
+
+  }
+
+
+
+  /*CIBLER LA PREMIERE PARTIE DE LA PAGE D ACCUEIL */
+  .slide {
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    box-shadow: inset 0px 10px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .wrapper {
+    width: 960px;
+    height: 200px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  a {
+    color: #FFFFFF;
+  }
+
+  a:hover {
+    color: blue;
+  }
+
+
+
+  /*CIBLER LE BOUTON FLECHE VERS LE BAS SUR L AVANT DERNIER SLIDER*/
+  .button {
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    background-color: blue;
+    background-image: url(../img/flechemoyenne.png);
+  }
+
+  .button:hover {
+    background-color: #000;
+    cursor: pointer;
+  }
+
+  /**CIBLER LES PETITS MOT SUR LE BAS COTE GAUCHE*/
+  .slideno {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    font-size: 100px;
+    font-weight: bold;
+    color: rgba(239, 240, 253, 0.918);
+  }
+
+  /******************************
+ SLIDE 1 
+*******************************/
+
+  /*CIBLER LE PREMIER SLIDER LA COULEUR ARRIERE PLAN*/
+  #slide1 {
+    background-color: #AFEEEE;
+
+  }
+
+  /*cibler la neurone en bas à droite*/
+  #slide1 img:first-child {
+    position: absolute;
+    top: 200px;
+    left: 300px;
+
+  }
+
+  /*cibler la grosse neurone en haut à gauche*/
+  #slide1 img:nth-child(2) {
+    position: absolute;
+    top: 100px;
+    left: 70px;
+
+  }
+
+  /*cibler la petite neurone à droite en haut*/
+  #slide1 img:nth-child(3) {
+    position: absolute;
+    top: 150px;
+    left: 400px;
+
+  }
+
+  /*cibler la grosse neurone en bas à gauche */
+  #slide1 img:nth-child(4) {
+    position: absolute;
+    top: 200px;
+    left: 5px;
+    right: 800px;
+
+
+
+  }
+
+  /*cibler la petite neurone au milieu et à la gauche du titre */
+  #slide1 img:nth-child(5) {
+    position: absolute;
+    top: 60px;
+    right: 650px;
+
+  }
+
+  /*cibler la neurone de taille moyenne en haut à droite */
+  #slide1 img:nth-child(6) {
+    position: absolute;
+    top: 100px;
+    left: 900px;
+
+  }
+
+  /*ciblerSPAN TITRE à chaque article */
+  .slide .parallax1 {
+    position: absolute;
+    left: 700px;
+    right: 700px;
+    top: 85px;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 5px;
+    color: blue;
+
+
+  }
+
+  /*cibler le paragraphe la classe article*/
+  .slide .article-biotech1 {
+    position: absolute;
+    right: 400px;
+    left: 400px;
+    top: 200px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    color: blue;
+  }
+
+
+  .slideno {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    font-size: 100px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  /******************************
+ SLIDE 2 
+*******************************/
+  #slide2 {
+    background: url(https://i.postimg.cc/s2bWcLmt/biotechnologie.jpg) no-repeat center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+  }
+
+
+  /*cibler SPAN TITRe de l'article  */
+  #slide2 .parallax2 {
+    position: absolute;
+    right: 700px;
+    left: 700px;
+    top: 85px;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 5px;
+    color: #FFF
+  }
+
+  /*cibler le paragraphe la classe article*/
+  #slide2 .article-biotech2 {
+    position: absolute;
+    right: 400px;
+    left: 400px;
+    top: 285px;
+    font-size: 20px;
+    font-weight: normal;
+    padding: 5px;
+    color: #fff;
+    opacity: 2;
+
+  }
+
+
+
+  /******************************
+ SLIDE 3 
+*******************************/
+  #slide3 {
+    background-color: lightskyblue;
+  }
+
+  /*cibler l'image 1*/
+  #slide3 img:first-child {
+    position: absolute;
+    top: 350px;
+    left: 300px;
+  }
+
+  /*cibler la montre connectee image2*/
+  #slide3 img:nth-child(2) {
+    position: absolute;
+    top: 180px;
+    left: 800px;
+    opacity: 0.5;
+  }
+
+  /*cibler l'image 3 */
+  #slide3 img:nth-child(3) {
+    position: absolute;
+    top: 50px;
+    left: 370px;
+  }
+
+  /*cibler l'image 4 les deux enfants */
+  #slide3 img:nth-child(4) {
+    position: absolute;
+    top: 200px;
+    left: 50px;
+    opacity: 0.5;
+  }
+
+  /*cibler l'image 5*/
+  #slide3 img:nth-child(5) {
+    position: absolute;
+    top: 80px;
+    left: 40px;
+  }
+
+  /*ciblerSPAN TITRE à chaque article */
+  #slide3 .parallax3 {
+    position: absolute;
+    left: 700px;
+    right: 700px;
+    top: 85px;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 5px;
+    color: blue;
+
+
+  }
+
+  /*cibler le paragraphe la classe article*/
+  #slide3 .article-biotech3 {
+    position: absolute;
+    right: 400px;
+    left: 400px;
+    top: 300px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    color: blue;
+  }
+
+
+  /******************************
+ SLIDE 4 
+*******************************/
+
+  #slide4 {
+    background-image: url(../img/slide4.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+
+
+  /*ciblerSPAN TITRE à chaque article */
+  #slide4 .parallax4 {
+    position: absolute;
+    left: 700px;
+    right: 700px;
+    top: 85px;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 5px;
+    color: #FFFFFF;
+
+
+  }
+
+  /*cibler le paragraphe la classe article*/
+  #slide4 .article-biotech4 {
+    position: absolute;
+    right: 400px;
+    left: 400px;
+    top: 200px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    color: #FFF;
+  }
+
+
+  /*CIBLER LE PIED DE PAGE******************pied de page*********************************************pied de page*********************/
+
+  .footer {
+    display: grid;
+    grid-template-columns: repeat(27, 1fr);
+    grid-auto-rows: 10px;
+    background: blue;
+  }
+
+  /*cible le logo dans le footer*/
+  .logofooter {
+    grid-column: 13/16;
+    grid-row: 1;
+  }
+
+  /*CIBLER LE H3 les mentions légales  QUI SE TROUVENT DANS LE FOOTER */
+  .executif {
+    grid-column: 7/22;
+    grid-row: 12;
+    text-align: center;
+    color: rgb(254, 254, 255);
+  }
+
+  .executif a:hover {
+    color: rgb(75, 200, 238);
+  }
+
+  /*cibler les | qui se trouvent dans la classe executif*/
+  .executif span {
+    padding-right: 4px;
+    padding-left: 4px;
+  }
+
+  /*cible le symbole facebook */
+  .fa {
+    grid-column: 27;
+    grid-row: 10;
+    padding: 10px;
+    font-size: 30px;
+    width: 10px;
+    height: 10px;
+  }
+
+  /*ajoute un effet sur le symbole facebook */
+  .fa:hover {
+    color: rgb(115, 154, 238);
+    opacity: 2;
+  }
+
+  /*changer la couleur du symbole facebook 
+  .fa-facebook {
+    background: #ffffff;
+    color: #3B5998;
+  }*/
+
+  /***CIBLER L ARTICLE MENTION LEGALE **/
+
+  .mentions {
+    display: grid;
+    grid-template-columns: repeat(27, 1fr);
+    grid-auto-rows: 10px;
+  }
+
+  /*CIBLER le paragraphe article mentions legales etc..*/
+  .mentions p {
+    grid-column: 2/24;
+    grid-row: 22;
+    margin-top: 110px;
+    color: #002e6d;
+    font-size: 1em;
+  }
+
+  /*cible LE FOOTER DE LA PAGE MENTIONS LEGALES*******************PAGES MENTIONS LEGALES**********PAGE MENTIONS LEGALES*******/
+  .footer-page-mentions-legales {
+    display: grid;
+    grid-template-columns: repeat(27, 1fr);
+    grid-auto-rows: 20px;
+    background: blue;
+    position: fixed;
+  }
+
+  /*cible le logo dans le footer*/
+  .footer-page-mentions-legales .logofooter {
+    grid-column: 13/16;
+    grid-row: 2;
+
+  }
+
+  /*CIBLER LE H3 les mentions légales  QUI SE TROUVENT DANS LE FOOTER */
+  .footer-page-mentions-legales .executif {
+    grid-column: 7/22;
+    grid-row: 22;
+    text-align: center;
+    color: rgb(254, 254, 255);
+  }
+
+  .footer-page-mentions-legales .executif a:hover {
+    color: rgb(75, 200, 238);
+  }
+
+  /*cibler les | qui se trouvent dans la classe executif*/
+  .footer-page-mentions-legales .executif span {
+    padding-right: 4px;
+    padding-left: 4px;
+  }
+
+  /*cible le symbole facebook */
+  .footer-page-mentions-legales .fa {
+    grid-column: 27;
+    grid-row: 24;
+    padding: 10px;
+    font-size: 30px;
+    width: 10px;
+    height: 10px;
+  }
+
+  /*ajoute un effet sur le symbole facebook */
+  .footer-page-mentions-legales .fa:hover {
+    color: rgb(115, 154, 238);
+    opacity: 2;
+  }
+
+  /*changer la couleur du symbole facebook 
+  .fa-facebook {
+    background: #ffffff;
+    color: #3B5998;
+  }*/

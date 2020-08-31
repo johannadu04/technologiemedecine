@@ -1,0 +1,13 @@
+ <div class="container">
+	<section>
+		<?php
+			// On sort de la fonction / requête si aucune catégorie n'a été définie.
+			if (!isset($orderedCategories)) return;
+			
+			foreach ($orderedCategories as $category) : ?>
+			<p><?php for ($i = 0; $i <= $category['level']; $i++) : ?>&nbsp;&nbsp;<?php endfor; ?> <a href="category.php?id=<?= $category['cat_id'] ?>"><?= $category['cat_title'] ?></a>
+			<span class="badge badge-pill <?= ($category['articles'] > 0) ? 'badge-success' : 'badge-light' ?>"><?= $category['articles'] ?> article(s)</span></p>
+		<?php endforeach; ?>
+	</section>
+
+ </div>
