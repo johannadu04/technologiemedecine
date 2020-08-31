@@ -4,12 +4,11 @@ require('lib/database.lib.php');
 require('lib/app.lib.php');
 
 $titlePage = 'Page auteur';
-$subTitlePage = 'Les article de : ';
+$subTitlePage = 'Les articles de : ';
 $picturePage = 'img/home-bg.jpg';
-$view ='author';
+$view = 'author';
 
-try
-{
+try {
     if (!array_key_exists('id', $_GET))
         throw new DomainException('Accès à la page non autorisé !');
 
@@ -22,7 +21,7 @@ try
     $sth->execute();
     $articles = $sth->fetch();
 
-    if($articles == false)
+    if ($articles == false)
         throw new DomainException('Cet auteur n\'existe pas !');
 
     $sth = $dbh->prepare('SELECT b_article.*,use_firstname,use_lastname,cat_title
@@ -35,19 +34,15 @@ try
     $sth->execute();
     $articles = $sth->fetchAll();
 
-    $subTitlePage.= $articles[0]['use_firstname'].' '. $articles[0]['use_lastname'];
+    $subTitlePage .= $articles[0]['use_firstname'] . ' ' . $articles[0]['use_lastname'];
 
-    foreach ($articles as $index=>$article) {
-        $articles[$index]['art_content'] = mb_strimwidth(str_replace(['&eacute;','&egrave;', '&rsquo;'], ['é','è',"'"], strip_tags($article['art_content'])), 0, RESUME_LENGTH, '...');
+    foreach ($articles as $index => $article) {
+        $articles[$index]['art_content'] = mb_strimwidth(str_replace(['&eacute;', '&egrave;', '&rsquo;'], ['é', 'è', "'"], strip_tags($article['art_content'])), 0, RESUME_LENGTH, '...');
         $articles[$index]['art_date_published'] = (new DateTime($article['art_date_published']))->format('d/m/Y');
-    }  
-}
-catch(PDOException $e)
-{
-    echo 'Erreur '.$e->getMessage();
-}
-catch(DomainException $e)
-{
+    }
+} catch (PDOException $e) {
+    echo 'Erreur ' . $e->getMessage();
+} catch (DomainException $e) {
     header("HTTP/1.0 404 Not Found");
     $titlePage = '404 Pas trouvé !';
     $subTitlePage = 'Tu es perdu ?';

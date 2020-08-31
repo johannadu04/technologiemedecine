@@ -5,7 +5,7 @@ require('lib/database.lib.php');
 require('lib/app.lib.php');
 
 $titlePage = 'Page catégories';
-$subTitlePage = 'Les article de la catégorie : ';
+$subTitlePage = 'Les articles de la catégorie : ';
 $picturePage = 'img/home-bg.jpg';
 $view = 'category';
 
