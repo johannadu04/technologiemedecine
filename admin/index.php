@@ -10,4 +10,3 @@ $view = 'index';
 $pageTitle = 'Dashboard';
 
 require('tpl/layout.phtml');
-

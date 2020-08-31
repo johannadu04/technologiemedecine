@@ -22,7 +22,7 @@ define('BASE_DIR', realpath(dirname(__FILE__) . "/../"));
 
 //const BASE_DIR = realpath(dirname(__FILE__) . "/../");n
 
-const URL = 'http://localhost/blogtechandmed/';
+const URL = 'http://localhost/technologiemedecine/';
 
 //Répertoire chemin complet vers le blog (pour l'upload)
 const UPLOADS_DIR = BASE_DIR . '/uploads/';
