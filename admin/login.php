@@ -18,7 +18,6 @@ try {
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-
         if (!filter_var($email, FILTER_VALIDATE_EMAIL) || $password == '')
             $errorForm[] = 'Merci de vérifier vos identifiants !';
 
@@ -28,7 +27,7 @@ try {
             // use_role = 1 correspond au role admin.
             $sth = $bdd->prepare('SELECT use_id,use_lastname,use_firstname,use_email,use_role,use_valid,use_password
                                 FROM b_user 
-                                WHERE use_email = :email AND use_valid=1 AND use_role = 1');
+                                WHERE use_email = :email AND use_valid=1');
             $sth->bindValue('email', $email, PDO::PARAM_STR);
             $sth->execute();
             $user =  $sth->fetch(PDO::FETCH_ASSOC);
